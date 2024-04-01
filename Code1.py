@@ -1,4 +1,6 @@
-def is_prime(n):
+def factor_modulus(N):
+    """Factor the modulus to obtain prime factors."""
+    def is_prime(n):
         """Check if a number is prime using trial division."""
         if n <= 1:
             return False
@@ -11,3 +13,12 @@ def is_prime(n):
             if n % i == 0:
                 return False
         return True 
+
+    p = None
+    for prime_number in range(2, N):
+        if is_prime(prime_number):
+            p = prime_number
+            break
+    q = N // p
+    return p, q
+
