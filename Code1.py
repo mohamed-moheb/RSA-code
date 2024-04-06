@@ -9,21 +9,21 @@ def factor_modulus(N, e):
             return True
         if n % 2 == 0:
             return False
-        sqrt_n = int(n**0.5) + 1
+        sqrt_n = int(n**0.5) + 1 #square root of n.
         for i in range(3, sqrt_n, 2):
             if n % i == 0:
-                return False
-        return True 
+                return False #in case not prime.
+        return True #in case prime.
 
     def calculate_private_exponent(p, q, e):
         """Calculate the private exponent d."""
-        Euler_totient = (p - 1) * (q - 1)
-        d = pow(e, -1, Euler_totient)# pow() function calculates modular exponentiation efficiently
+        Euler_totient = (p - 1) * (q - 1)#essential for deriving the private exponent.
+        d = pow(e, -1, Euler_totient)# pow() function calculates modular exponentiation efficiently.
         return d
     
     
     for p in range(2, N):
-        if N % p == 0 and is_prime(p):
+        if N % p == 0 and is_prime(p):#checks if p factor of N and p is prime factor.
             q = N // p
             d = calculate_private_exponent(p, q, e)
             return p, q, d
