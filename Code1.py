@@ -1,5 +1,6 @@
-def factor_modulus(N):
-    """Factor the modulus to obtain prime factors."""
+def factor_modulus(N, e):
+    """Factor the modulus to obtain prime factors and calculate the private exponent."""
+    
     def is_prime(n):
         """Check if a number is prime using trial division."""
         if n <= 1:
@@ -14,11 +15,15 @@ def factor_modulus(N):
                 return False
         return True 
 
-    p = None
-    for prime_number in range(2, N):
-        if is_prime(prime_number):
-            p = prime_number
-            break
-    q = N // p
-    return p, q
-
+    def calculate_private_exponent(p, q, e):
+        """Calculate the private exponent d."""
+        Euler_totient = (p - 1) * (q - 1)
+        d = pow(e, -1, Euler_totient)# pow() function calculates modular exponentiation efficiently
+        return d
+    
+    
+    for p in range(2, N):
+        if N % p == 0 and is_prime(p):
+            q = N // p
+            d = calculate_private_exponent(p, q, e)
+            return p, q, d
