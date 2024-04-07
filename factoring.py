@@ -29,8 +29,8 @@ def factor_modulus(N, e):
             d = calculate_private_exponent(p, q, e)
             return p, q, d
 
-N = 204713
-e = 65537
+N = 
+e = 
 p, q, d = factor_modulus(N, e)
 runtime="""p, q, d = factor_modulus(N, e)"""
 execution_time = timeit.timeit(runtime, globals=globals(), number=1)#number=1 ensure that the code is only timed once
