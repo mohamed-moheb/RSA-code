@@ -1,4 +1,4 @@
-import time
+import timeit
 def factor_modulus(N, e):
     """Factor the modulus to obtain prime factors and calculate the private exponent."""
     
@@ -28,3 +28,13 @@ def factor_modulus(N, e):
             q = N // p
             d = calculate_private_exponent(p, q, e)
             return p, q, d
+
+N = 204713
+e = 65537
+p, q, d = factor_modulus(N, e)
+runtime="""p, q, d = factor_modulus(N, e)"""
+execution_time = timeit.timeit(runtime, globals=globals(), number=1)#number=1 ensure that the code is only timed once
+print("Prime factor p is:", p)
+print("Prime factor q is:", q)
+print("Private exponent d:", d)
+print("Runtime:", execution_time, "seconds")
