@@ -29,7 +29,7 @@ The task involves implementing the following functionalities:
 ## Usage
 
 1. Clone the repository to your local machine.
-2. Run the Python script `code1.py`.
+2. Run the Python script `factoring.py`and `bruteforce.py`.
 3. Input the modulus \( N \) and the public exponent \( e \).
 4. The program will factorize the modulus, calculate the private exponent, and output the results.
 
