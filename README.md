@@ -4,7 +4,7 @@ This project demonstrates the implementation of RSA encryption algorithm with th
 
 - Factorizing a modulus \( N \) to obtain prime factors \( p \) and \( q \).
 - Calculating the private exponent \( d \) using the obtained prime factors and a public exponent \( e \).
-- Brute-forcing the private exponent \( d \) if necessary.
+- Brute-forcing the private exponent \( d \).
 
 ## Background
 
@@ -18,7 +18,7 @@ The task involves implementing the following functionalities:
 
 2. **Calculating the Private Exponent**: Using the obtained prime factors \( p \) and \( q \), along with a public exponent \( e \), calculate the private exponent \( d \). The private exponent \( d \) satisfies the equation \( e \cdot d \equiv 1 \mod{\phi(N)} \), where \( \phi(N) = (p - 1) \cdot (q - 1) \).
 
-3. **Brute-Force Approach**: If necessary, implement a brute-force approach to find the private exponent \( d \). This involves trying different values of \( d \) until the correct one is found.
+3. **Brute-Force Approach**: Implement a brute-force approach to find the private exponent \( d \). This involves trying different values of \( d \) until the correct one is found.
 
 ## Implementation Details
 
