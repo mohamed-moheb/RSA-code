@@ -1,3 +1,4 @@
+import timeit
 def brute_force_private_exponent(p, q, e):
     """Brute force the private exponent d."""
     Euler_totient = (p - 1) * (q - 1)
@@ -10,4 +11,7 @@ def brute_force_private_exponent(p, q, e):
 
 p,q,e = 
 private_exponent = brute_force_private_exponent(p, q, e)
+code_to_measure = """d = brute_force_private_exponent(p, q, e)"""
+execution_time = timeit.timeit(code_to_measure, globals=globals(), number=1)
 print("Private exponent d:", private_exponent)
+print("Runtime:", execution_time, "seconds")
