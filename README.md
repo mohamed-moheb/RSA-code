@@ -30,8 +30,9 @@ The task involves implementing the following functionalities:
 
 1. Clone the repository to your local machine.
 2. Run the Python script `factoring.py`and `bruteforce.py`.
-3. Input the modulus \( N \) and the public exponent \( e \).
-4. The program will factorize the modulus, calculate the private exponent, and output the results.
+3. For  `factoring.py` input the modulus \( N \) and the public exponent \( e \).
+4. For `bruteforce.py` input the prime factors \( p \) and \( q \), along with the public exponent \( e \).
+5. The program will factorize the modulus, calculate the private exponent, and output the results.
 
 ## Contributors
 
