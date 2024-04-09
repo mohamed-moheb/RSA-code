@@ -32,7 +32,8 @@ The task involves implementing the following functionalities:
 2. Run the Python script `factoring.py`and `bruteforce.py`.
 3. For  `factoring.py` input the modulus \( N \) and the public exponent \( e \).
 4. For `bruteforce.py` input the prime factors \( p \) and \( q \), along with the public exponent \( e \).
-5. The program will factorize the modulus, calculate the private exponent, and output the results.
+5. The program will factorize the modulus, calculate the private exponent \( d \), and output the results.
+6. The program will brute force the value of private exponent \( d \), and output the results.
 
 ## Contributors
 
