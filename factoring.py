@@ -28,13 +28,30 @@ def factor_modulus(N, e):
             q = N // p
             d = calculate_private_exponent(p, q, e)
             return p, q, d
+def rsa_encrypt(message, e, N):
+    """Encrypt a message using RSA."""
+    encrypted_message = pow(message, e, N)
+    return encrypted_message
 
-N = 
-e = 
+def rsa_decrypt(encrypted_message, d, N):
+    """Decrypt an encrypted message using RSA."""
+    decrypted_message = pow(encrypted_message, d, N)
+    return decrypted_message
+
+def check_private_exponent(d, N, e, test_message):
+    """Check if the private exponent is correct by encrypting and decrypting a test message."""
+    encrypted_message = rsa_encrypt(test_message, e, N)
+    decrypted_message = rsa_decrypt(encrypted_message, d, N)
+    return decrypted_message == test_message
+N = 21509
+e = 65537
+test_message = 12345
 p, q, d = factor_modulus(N, e)
+is_private_exponent_correct = check_private_exponent(d, N, e, test_message)
 runtime="""p, q, d = factor_modulus(N, e)"""
 execution_time = timeit.timeit(runtime, globals=globals(), number=1)#number=1 ensure that the code is only timed once
 print("Prime factor p is:", p)
 print("Prime factor q is:", q)
 print("Private exponent d:", d)
 print("Runtime:", execution_time, "seconds")
+print("Is private exponent correct:", is_private_exponent_correct)
